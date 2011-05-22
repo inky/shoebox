@@ -1,3 +1,5 @@
+require 'rexml/document'
+
 Shoes.app(:title => 'News In Bed', :width => 420, :height => 594) do
     background cornsilk
     @loading = para 'Finding some juicy news...'
@@ -9,14 +11,12 @@ Shoes.app(:title => 'News In Bed', :width => 420, :height => 594) do
     end
 
     def titles(xml)
-        matches = []
-        xml.lines do |line|
-            line.match /<title>(.*)<\/title>/ do |match|
-                matches.push match[1]
-            end
+        doc = REXML::Document.new(xml)
+        items = []
+        doc.elements.each('rss/channel/item/title') do |el|
+            items << el.text
         end
-        matches.shift  # remove the feed title
-        matches.shuffle
+        items.shuffle
     end
 
     download 'http://feeds.bbci.co.uk/news/rss.xml' do |feed|
