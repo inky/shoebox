@@ -14,6 +14,8 @@ for Casey Kolderup’s [Two Shoes Weekend][twoshoes].
    world is to global disaster. (At the time of writing, [the clock][doomsday]
    has changed a grand total of three times this millennium.)
 
+4. **Cannon** is a cannon. It doesn’t work well.
+
 [oneshoe]: http://www.shoesrb.com/
 [twoshoes]: http://ckolderup.tumblr.com/post/5674571526/two-shoes-weekend
 [butts]: http://threewordphrase.com/kingbutt.htm
